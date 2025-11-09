@@ -7,6 +7,12 @@
 git clone https://github.com/suppukerr/frontend-vue-test-task.git
 ```
 
+Перейти в папук проекта
+
+```
+cd frontend-vue-test-task
+```
+
 Запустить в папке проекта 
 ```
 npm run dev
