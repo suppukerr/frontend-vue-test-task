@@ -12,9 +12,7 @@ const props = defineProps({
 const emit = defineEmits(["update:modelValue", "submit"]);
 
 const errors = ref({});
-
 const formValid = ref(true);
-
 const submitInput = ref('');
 
 const formData = computed({
@@ -29,6 +27,10 @@ const formData = computed({
 const updateField = (fieldName, value) => {
   formData.value[fieldName] = value;
   emit("update:modelValue", { ...formData.value });
+
+  if (submitInput.value) {
+    submitInput.value = '';
+  }
 
   if (errors.value[fieldName]) {
     delete errors.value[fieldName];
